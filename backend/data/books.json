@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "One Hundred Years of Solitude",
+    "author_id": 1,
+    "year": 1967,
+    "genre": "Magical Realism",
+    "available": true
+  },
+  {
+    "id": 2,
+    "title": "Love in the Time of Cholera",
+    "author_id": 1,
+    "year": 1985,
+    "genre": "Romance",
+    "available": true
+  },
+  {
+    "id": 3,
+    "title": "The House of the Spirits",
+    "author_id": 2,
+    "year": 1982,
+    "genre": "Magical Realism",
+    "available": false
+  },
+  {
+    "id": 4,
+    "title": "Ficciones",
+    "author_id": 3,
+    "year": 1944,
+    "genre": "Short Stories",
+    "available": true
+  },
+  {
+    "id": 5,
+    "title": "Twenty Love Poems and a Song of Despair",
+    "author_id": 4,
+    "year": 1924,
+    "genre": "Poetry",
+    "available": true
+  },
+  {
+    "id": 6,
+    "title": "Hopscotch",
+    "author_id": 5,
+    "year": 1963,
+    "genre": "Experimental Fiction",
+    "available": true
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Gabriel García Márquez",
+    "nationality": "Colombian",
+    "birth_date": "1927-03-06"
+  },
+  {
+    "id": 2,
+    "name": "Isabel Allende",
+    "nationality": "Chilean",
+    "birth_date": "1942-08-02"
+  },
+  {
+    "id": 3,
+    "name": "Jorge Luis Borges",
+    "nationality": "Argentine",
+    "birth_date": "1899-08-24"
+  },
+  {
+    "id": 4,
+    "name": "Pablo Neruda",
+    "nationality": "Chilean",
+    "birth_date": "1904-07-12"
+  },
+  {
+    "id": 5,
+    "name": "Julio Cortázar",
+    "nationality": "Argentine",
+    "birth_date": "1914-08-26"
+  }
+]

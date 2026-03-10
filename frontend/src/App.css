@@ -1,0 +1,27 @@
+/* Add your styles here as you build components */
+
+/* Basic error banner styling */
+.error-banner {
+  background: #e74c3c;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.error-banner button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
