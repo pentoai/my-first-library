@@ -21,4 +21,4 @@ uvicorn main:app --reload
 
 ## Sample Data
 
-CSV files with sample data are in `data/`.
+JSON files with sample data are in `data/`.
