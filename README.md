@@ -6,7 +6,9 @@ A minimal full-stack scaffold designed for progressive learning.
 
 ```
 my-first-library/
+├── docker-compose.yml   # Defines the database and backend services
 ├── backend/          # FastAPI + SQLAlchemy + SQLite
+│   ├── Dockerfile    # Builds the backend container
 │   ├── main.py       # API endpoints
 │   ├── models.py     # SQLAlchemy models
 │   ├── schemas.py    # Pydantic schemas
@@ -22,20 +24,33 @@ my-first-library/
     └── package.json
 ```
 
+## Prerequisites
+
+- [Docker](https://docs.docker.com/get-docker/) and Docker Compose
+- Python 3.10+ (for running tests locally)
+- Node.js 18+ and npm (for the frontend)
+
 ## Quick Start
 
-### Backend Setup
+### Start the databases and backend
+
+Docker handles PostgreSQL and the FastAPI server for you:
 
 ```bash
-cd backend
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-pip install -r requirements.txt
-uvicorn main:app --reload
+docker compose up -d
 ```
 
-- API: http://localhost:8000
-- Docs: http://localhost:8000/docs (available once you implement endpoints)
+This starts two services (defined in `docker-compose.yml`):
+
+- `db` — PostgreSQL for the app on port 5432
+- `backend` — FastAPI app on port 8000
+
+> **Already have PostgreSQL installed locally?** You can skip Docker for the databases and create them manually instead.
+> Then update `DATABASE_URL` in your `.env` file to point to your local instance. You can still run just the backend container with `docker compose up -d backend` if you prefer.
+
+The API is now running at http://localhost:8000
+
+- Interactive docs: http://localhost:8000/docs
 
 ### Frontend Setup
 
