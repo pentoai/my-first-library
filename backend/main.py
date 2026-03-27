@@ -21,4 +21,4 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Implement your API endpoints here
+# Implement your API endpoints here. See helper functions in models.py.
