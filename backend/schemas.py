@@ -6,7 +6,6 @@ from typing import Optional, List
 class AuthorBase(BaseModel):
     name: str
     nationality: Optional[str] = None
-    birth_date: Optional[str] = None
 
 
 class AuthorCreate(AuthorBase):

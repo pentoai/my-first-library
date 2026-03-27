@@ -1,7 +1,6 @@
 import json
 from dataclasses import dataclass
 from typing import List, Optional
-from datetime import date
 
 
 @dataclass
@@ -9,19 +8,13 @@ class Author:
     id: int
     name: str
     nationality: Optional[str] = None
-    birth_date: Optional[date] = None
 
     @classmethod
     def from_dict(cls, data: dict) -> "Author":
-        birth_date = None
-        if data.get("birth_date"):
-            birth_date = date.fromisoformat(data["birth_date"])
-
         return cls(
             id=data["id"],
             name=data["name"],
             nationality=data.get("nationality"),
-            birth_date=birth_date,
         )
 
 
@@ -56,13 +49,13 @@ def load_authors() -> List[Author]:
 # Helper functions
 # These will only be useful while we work with JSON files instead of a database
 
+
 def save_authors(authors: List[Author]) -> None:
     data = [
         {
             "id": a.id,
             "name": a.name,
             "nationality": a.nationality,
-            "birth_date": a.birth_date.isoformat() if a.birth_date else None,
         }
         for a in authors
     ]
@@ -81,7 +74,6 @@ def get_author_by_id(author_id: int) -> Optional[Author]:
 def add_author(
     name: str,
     nationality: Optional[str] = None,
-    birth_date: Optional[str] = None,
 ) -> Author:
     authors = load_authors()
     new_id = max((a.id for a in authors), default=0) + 1
@@ -89,7 +81,6 @@ def add_author(
         id=new_id,
         name=name,
         nationality=nationality,
-        birth_date=date.fromisoformat(birth_date) if birth_date else None,
     )
     authors.append(new_author)
     save_authors(authors)
@@ -100,14 +91,12 @@ def update_author(
     author_id: int,
     name: str,
     nationality: Optional[str] = None,
-    birth_date: Optional[str] = None,
 ) -> Optional[Author]:
     authors = load_authors()
     for author in authors:
         if author.id == author_id:
             author.name = name
             author.nationality = nationality
-            author.birth_date = date.fromisoformat(birth_date) if birth_date else None
             save_authors(authors)
             return author
     return None

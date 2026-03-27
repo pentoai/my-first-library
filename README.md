@@ -32,9 +32,32 @@ my-first-library/
 
 ## Quick Start
 
+### Backend Setup
+
+```bash
+cd backend
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
+
+- The API is now running at http://localhost:8000
+- See the docs at http://localhost:8000/docs
+
+### Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+- Frontend: http://localhost:5173
+
 ### Start the databases and backend
 
-Docker handles PostgreSQL and the FastAPI server for you:
+Docker handles PostgreSQL and the FastAPI server for you. This will be useful once you reach the DB integration module.
 
 ```bash
 docker compose up -d
@@ -48,19 +71,7 @@ This starts two services (defined in `docker-compose.yml`):
 > **Already have PostgreSQL installed locally?** You can skip Docker for the databases and create them manually instead.
 > Then update `DATABASE_URL` in your `.env` file to point to your local instance. You can still run just the backend container with `docker compose up -d backend` if you prefer.
 
-The API is now running at http://localhost:8000
-
-- Interactive docs: http://localhost:8000/docs
-
-### Frontend Setup
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-- Frontend: http://localhost:5173
+Interactive docs: http://localhost:8000/docs
 
 ## Sample Data Available
 
